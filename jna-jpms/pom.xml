@@ -16,19 +16,11 @@
     <name>JNA JPMS wrapper</name>
     <description>Adds module-info to net.java.dev.jna:jna for jlink.</description>
 
-    <properties>
-        <!-- Adjust Java release as needed for your toolchain -->
-        <maven.compiler.release>25</maven.compiler.release>
-        <moditect.version>1.3.0.Final</moditect.version>
-        <jna.version>5.18.1</jna.version>
-    </properties>
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.moditect</groupId>
                 <artifactId>moditect-maven-plugin</artifactId>
-                <version>${moditect.version}</version>
                 <executions>
                     <execution>
                         <id>add-module-info-jna</id>
@@ -64,7 +56,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>unpack-moditect-jna-into-classes</id>
@@ -84,7 +75,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
                 <configuration>
                     <skip>false</skip>
                 </configuration>

@@ -16,11 +16,6 @@
     <name>rocksdbjni-jpms</name>
     <description>JPMS wrapper for the RocksDB JNI libraries.</description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rocksdbjni.version>10.4.2</rocksdbjni.version>
-    </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -111,7 +106,6 @@
             <plugin>
                 <groupId>org.moditect</groupId>
                 <artifactId>moditect-maven-plugin</artifactId>
-                <version>1.3.0.Final</version>
                 <executions>
                     <!--
 RocksDB JNI 10.4.2 uses the “slim Java bindings” strategy: the main rocksdbjni JAR contains only the
@@ -206,7 +200,6 @@ versions where the JAR included all platform-specific natives in one fil
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>unzip-jar-into-classes</id>
@@ -247,7 +240,6 @@ versions where the JAR included all platform-specific natives in one fil
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <id>attach-moditect-output</id>
@@ -303,7 +295,6 @@ versions where the JAR included all platform-specific natives in one fil
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.5.1</version>
                         <executions>
                             <execution>
                                 <id>explode-osx-jar</id>

@@ -17,24 +17,16 @@
     <name>JNA Platform JPMS wrapper</name>
     <description>Adds module-info to net.java.dev.jna:jna-platform:5.14.0 for jlink.</description>
 
-    <properties>
-        <maven.compiler.release>25</maven.compiler.release>
-        <moditect.version>1.3.0.Final</moditect.version>
-        <jna.version>5.18.1</jna.version>
-    </properties>
-
     <!-- We only need the upstream jars available for Moditect to read -->
     <dependencies>
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna-platform</artifactId>
-            <version>${jna.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna</artifactId>
-            <version>${jna.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -44,7 +36,6 @@
             <plugin>
                 <groupId>org.moditect</groupId>
                 <artifactId>moditect-maven-plugin</artifactId>
-                <version>${moditect.version}</version>
                 <executions>
                     <execution>
                         <id>add-module-info-jna-platform</id>
@@ -95,7 +86,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>unpack-moditect-jna-platform-into-classes</id>
@@ -115,7 +105,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
                 <configuration>
                     <skip>false</skip>
                 </configuration>
